@@ -1,0 +1,19 @@
+@import 'variables';
+@import 'form';
+@import 'todosList';
+@import 'board';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+};
+
+body {
+    user-select: none;
+};
+
+.navbar {
+    margin-bottom: 3.5vh;
+};
+

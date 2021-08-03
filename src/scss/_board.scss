@@ -1,0 +1,20 @@
+.board {
+    height: calc(100vh - 120px);
+    resize: none;
+    padding: 1rem;
+
+    &::-webkit-scrollbar {
+        background-color: #ddd;
+        -webkit-appearance: none;
+        width:.35em;
+
+        &:window-inactive {
+            display: none;
+        };
+    };
+
+    &::-webkit-scrollbar-thumb {
+        background-color:#aaa;
+        border-radius: 1rem;
+    };
+};

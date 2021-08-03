@@ -1,0 +1,8 @@
+$taskHoverBackground: #e9e9e9;
+
+@mixin wideDevice {
+    @media (min-width: 600px) {
+        @content;
+    };
+};
+  

@@ -1,0 +1,42 @@
+@import 'variables';
+
+.list-group-flush {
+    display: grid;
+    max-height: calc(100vh - 275px);
+    overflow: auto;
+    width: 100%;
+};
+
+.list-group-item {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    
+    p {
+        margin: 0 1rem 0 0;
+    };
+
+    button {
+        margin-left: auto;
+    };
+
+    &:hover {
+        background-color: $taskHoverBackground !important
+    };
+};
+
+.taskCompleted {
+    text-decoration: line-through;
+};
+
+@include wideDevice {
+    .list-group-flush {
+        display: grid;
+        gap: 1.25rem;
+        grid-auto-flow: dense; 
+        grid-template-columns: unquote("repeat(auto-fill, minmax(min(100%, 15rem), 1fr))"); // SCSS things 😓
+        max-height: none;
+    };
+};
