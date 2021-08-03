@@ -13,7 +13,7 @@ export const AppRouter = () => {
     return (
         <Router>
             <NavBar/>
-            <div className="container">
+            <div className="container main-container">
                 <Switch>
                     <Route exact path="/" component={HomeSection} />
                     <Route exact path="/board" component={BoardSection} />

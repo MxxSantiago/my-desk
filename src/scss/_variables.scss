@@ -1,8 +1,34 @@
-$taskHoverBackground: #e9e9e9;
+$white: #f9f9f9;
+$black: rgb(7, 7, 7);
+$taskHoverBackground: #eee;
+$defaultGroupIdentificarColor: #e9e9e9;
+$sweetBorder: #555;
 
 @mixin wideDevice {
     @media (min-width: 600px) {
         @content;
     };
 };
+
+@mixin smallDevice {
+    @media (max-width: #{600px - 1px}) {
+        @content;
+    };
+}
   
+@mixin scrollbar {
+    &::-webkit-scrollbar {
+        background-color: #c9c9c9;
+        -webkit-appearance: none;
+        width:.35em;
+
+        &:window-inactive {
+            display: none;
+        };
+    };
+
+    &::-webkit-scrollbar-thumb {
+        background-color:#a9a9a9;
+        border-radius: 1rem;
+    };
+};

@@ -1,0 +1,64 @@
+@import 'variables';
+
+.colorSelector {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding: .1rem;
+    width: min-content;
+
+    .color {
+        border: none;
+        cursor: pointer;
+        margin: 0 2.5vmin;
+        min-height: 4.5vmin;
+        min-width: 4.5vmin;
+
+        &:hover {
+            border: 1px solid $white;
+        };
+
+        &:first-child {
+            margin-left: 0;        
+        };
+
+        @include wideDevice {
+            margin: 0 1rem;
+            min-height: 1.5rem;
+            min-width: 1.5rem;
+        };
+    };
+};
+
+#color-yellow {
+    background-color: #E8ED80;
+};
+
+#color-pink {
+    background-color: #AF4FC4;
+};
+
+#color-blue {
+    background-color: #1764DD;
+};
+
+#color-red {
+    background-color: #FC3B05;
+};
+
+#color-green {
+    background-color: #17B169;
+};
+
+#color-sky {
+    background-color: #44d8e9;
+};
+
+#color-orange {
+    background-color: #FB9C01;
+};
+
+.navbar-brand {
+    margin-right: 3rem;
+}

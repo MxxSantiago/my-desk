@@ -19,7 +19,8 @@ export const HomeSection = () => {
     return (
         <div>
             <h1>My tasks</h1>
-            <hr />
+            <hr/>
+            <p>Create a new task, choose a name and color.</p>
             <TodoAdd handleAddTodo={handleAddTodo}/>
             <hr/>
             <p>Tasks to do: {todos.length}</p>
