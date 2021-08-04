@@ -12,8 +12,8 @@
         border: none;
         cursor: pointer;
         margin: 0 2.5vmin;
-        min-height: 4.5vmin;
-        min-width: 4.5vmin;
+        min-height: 6vmin;
+        min-width: 6vmin;
 
         &:hover {
             border: 1px solid $white;
@@ -32,10 +32,10 @@
 };
 
 #color-yellow {
-    background-color: #E8ED80;
+    background-color: #c7cf31;
 };
 
-#color-pink {
+#color-purple {
     background-color: #AF4FC4;
 };
 

@@ -20,7 +20,7 @@ export const HomeSection = () => {
         <div>
             <h1>My tasks</h1>
             <hr/>
-            <p>Create a new task, choose a name and color.</p>
+            <h2 className="fw-light mb-3 fs-6">Create a new task, choose a name and color.</h2>
             <TodoAdd handleAddTodo={handleAddTodo}/>
             <hr/>
             <p>Tasks to do: {todos.length}</p>

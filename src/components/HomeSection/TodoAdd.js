@@ -2,9 +2,9 @@ import React from 'react'
 import { useForm } from '../../hooks/useForm';
 
 export const TodoAdd = ({ handleAddTodo }) => {
-    const [formValues, handleInputChange, resetForm] = useForm({
+    const [formValues, handleInputChange, resetForm, setFormValues] = useForm({
         description: '',
-        color: 'color-yellow'
+        color: 'color-blue'
     });
 
     const handleSubmit = event => {
@@ -27,8 +27,21 @@ export const TodoAdd = ({ handleAddTodo }) => {
     };
 
     const changeColor = ({ target }) => {
-        formValues.color = target.id;
+        setFormValues({
+            ...formValues,
+            color: target.id
+        });
     };
+
+    const colors = [
+        "color-blue",
+        "color-purple",
+        "color-yellow",
+        "color-red",
+        "color-green",
+        "color-sky",
+        "color-orange"
+    ];
 
     return (
         <div>
@@ -36,6 +49,7 @@ export const TodoAdd = ({ handleAddTodo }) => {
                 <input
                     autoComplete="off"
                     className="form-control bg-light"
+                    maxLength={35}
                     name="description"
                     onChange={handleInputChange}
                     placeholder="Task name"
@@ -43,10 +57,10 @@ export const TodoAdd = ({ handleAddTodo }) => {
                     spellCheck={false}
                     type="text"
                     value={formValues.description}
-                    maxLength={35}
                 />
                 <button
-                    className="btn btn-primary"
+                    className="btn text-light"
+                    id={formValues.color}
                     type="submit"
                     disabled={formValues.description.length <= 0 ? true : false}
                 >
@@ -54,13 +68,16 @@ export const TodoAdd = ({ handleAddTodo }) => {
                 </button>
             </form>
             <div className="colorSelector">
-                <p onClick={changeColor} className="color" id="color-yellow"></p>
-                <p onClick={changeColor} className="color" id="color-blue"></p>
-                <p onClick={changeColor} className="color" id="color-pink"></p>
-                <p onClick={changeColor} className="color" id="color-red"></p>
-                <p onClick={changeColor} className="color" id="color-green"></p>
-                <p onClick={changeColor} className="color" id="color-sky"></p>
-                <p onClick={changeColor} className="color" id="color-orange"></p>
+                {
+                    colors.map(color => (
+                        <p 
+                            key={color}
+                            onClick={changeColor}
+                            className="color" 
+                            id={color}
+                        />
+                    ))
+                }
             </div>
         </div>
     );
