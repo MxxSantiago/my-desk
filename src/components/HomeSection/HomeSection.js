@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { UserContext } from '../../main/UserContext';
+import { UserContext } from '../UserContext';
 import { TodoAdd } from './TodoAdd';
 import { TodoList } from './TodoList';
 
@@ -18,7 +18,7 @@ export const HomeSection = () => {
 
     return (
         <div>
-            <h1>My tasks</h1>
+            <h1>Tasks</h1>
             <hr/>
             <h2 className="fw-light mb-3 fs-6">Create a new task, choose a name and color.</h2>
             <TodoAdd handleAddTodo={handleAddTodo}/>

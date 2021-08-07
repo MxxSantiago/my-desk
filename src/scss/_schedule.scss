@@ -1,0 +1,10 @@
+@import 'variables';
+
+.schedule {
+    padding: 1rem;
+
+    .schedule-time {
+        margin-left: auto;
+        border-bottom: 0.01rem solid $black;
+    };
+};

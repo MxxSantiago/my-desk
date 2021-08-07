@@ -45,7 +45,7 @@ export const TodoAdd = ({ handleAddTodo }) => {
 
     return (
         <div>
-            <form className="form" onSubmit={handleSubmit}>
+            <form className="todo-form" onSubmit={handleSubmit}>
                 <input
                     autoComplete="off"
                     className="form-control bg-light"
@@ -60,9 +60,9 @@ export const TodoAdd = ({ handleAddTodo }) => {
                 />
                 <button
                     className="btn text-light"
+                    disabled={formValues.description.length <= 0 ? true : false}
                     id={formValues.color}
                     type="submit"
-                    disabled={formValues.description.length <= 0 ? true : false}
                 >
                     Add task
                 </button>

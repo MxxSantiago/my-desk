@@ -4,10 +4,10 @@ import { AppRouter } from './AppRouter'
 import '../css/style.css';
 
 const initialState = [];
-const init = () => JSON.parse(localStorage.getItem('todos')) || [];
+const initTodos = () => JSON.parse(localStorage.getItem('todos')) || [];
 
 export const MainApp = () => {
-    const todoReducer = (state = [], action) => {
+    const dataReducer = (state = [], action) => {
         switch (action.type) {
             case 'add':
                 return [...state, action.payload];
@@ -20,7 +20,7 @@ export const MainApp = () => {
         };
     };
 
-    const [todos, dispatch] = useReducer(todoReducer, initialState, init);
+    const [todos, dispatch] = useReducer(dataReducer, initialState, initTodos);
 
     return (
         <UserContext.Provider value={{todos, dispatch}}> 

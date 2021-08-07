@@ -1,0 +1,30 @@
+.todo-form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    width: 100%;
+
+    * {
+        border-radius: 0;
+    };
+};
+
+.schedule-form {
+    display: grid;
+    width: 100%;
+
+    .time-start:before {
+        content:'Start:';
+        margin-right:.6em;
+        color:#9d9d9d;
+    }
+
+    .time-end:before {
+        content:'End:';
+        margin-right:.9em;
+        color:#9d9d9d;
+    }
+
+    * {
+        border-radius: 0;
+    };
+};

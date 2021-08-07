@@ -1,8 +1,11 @@
 @import 'variables';
-@import 'form';
+@import 'forms';
 @import 'todosList';
 @import 'board';
 @import 'colorSelector';
+@import 'timeList';
+@import 'swiper';
+@import 'schedule';
 
 * {
     box-sizing: border-box;

@@ -3,7 +3,7 @@ import { TodoItem } from './TodoItem'
 
 export const TodoList = ({todos, handleDelete, handleToggle}) => {
     return (
-        <ul className="list-group list-group-flush">
+        <ul className="todo-list list-group list-group-flush">
             {
                 todos.map((todo, index) => (
                     <TodoItem 
