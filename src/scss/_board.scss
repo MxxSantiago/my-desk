@@ -8,4 +8,8 @@
     resize: none;
     padding: 1rem;
     @include scrollbar;
+
+    @include wideDevice {
+        height: calc(95vh - 200px);
+    };
 };
