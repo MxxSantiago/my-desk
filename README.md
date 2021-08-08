@@ -1,7 +1,14 @@
-## My first React app.
+# MY-DESK
 
-link: https://nervous-albattani-8850c1.netlify.app/
+### My first react app.
 
+Multitasks pwa ussing react and scss
+
+- Tasks 
+- Schedules
+- Notes
+
+[link to the project](https://my-desk.netlify.app)	
 
 ![Captura web_7-8-2021_181857_localhost](https://user-images.githubusercontent.com/77345774/128619502-94913034-671f-4d6b-a04b-fff130e228b8.jpeg)
 
