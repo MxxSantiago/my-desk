@@ -12,8 +12,8 @@ export const NavBar = () => {
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
                         <NavLink exact activeClassName="active" className="nav-link" to="/">Tasks</NavLink>
-                        <NavLink exact activeClassName="active" className="nav-link" to="/board">Board</NavLink>
                         <NavLink exact activeClassName="active" className="nav-link" to="/timelist">Timelist</NavLink>
+                        <NavLink exact activeClassName="active" className="nav-link" to="/board">Board</NavLink>
                     </div>
                 </div>
             </div>

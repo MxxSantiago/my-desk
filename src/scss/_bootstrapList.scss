@@ -11,26 +11,13 @@
 
 .list-group-item {
     align-items: center;
-    cursor: pointer;
     display: flex;
     overflow-wrap: break-word;
     word-wrap: break-word;
-    
-    p {
-        margin: 0 1rem 0 0;
-    };
 
     button {
         margin-left: auto;
     };
-
-    &:hover {
-        background-color: $taskHoverBackground !important;
-    };
-};
-
-.taskCompleted {
-    text-decoration: line-through;
 };
 
 @include wideDevice {
@@ -42,11 +29,3 @@
     };
 };
 
-.task {
-    display: grid;
-    grid-template-columns: 3.5% 96.5%;
-
-    .group-identificator {
-        background-color: $defaultGroupIdentificarColor;
-    };  
-};

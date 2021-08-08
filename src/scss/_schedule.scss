@@ -1,10 +1,23 @@
 @import 'variables';
 
 .schedule {
-    padding: 1rem;
+    align-items: center;
+    flex-direction: column;
+
+    .schedule-description {
+        margin-top: 1rem;
+        padding: 0 1rem;
+    }
 
     .schedule-time {
-        margin-left: auto;
+        margin-top: .5rem;
+    };
+
+    .schedule-time {
         border-bottom: 0.01rem solid $black;
+    };
+
+    @include wideDevice {
+        margin-top: 1rem;
     };
 };

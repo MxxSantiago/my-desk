@@ -10,11 +10,15 @@ export const BoardSection = () => {
     }, [state]);
 
     return (
-        <textarea 
-            className="form-control board" 
-            placeholder="Type something.."
-            value={state}
-            onChange={event => setState(event.target.value)}
-        />
+        <div>
+            <h1>Board</h1>
+            <hr/>
+            <textarea 
+                className="form-control board" 
+                placeholder="Type something.."
+                value={state}
+                onChange={event => setState(event.target.value)}
+            />
+        </div>
     );
 };

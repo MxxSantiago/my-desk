@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import { useForm } from '../../hooks/useForm';
 
-export const ScheduleAdd = ({setSchedules}) => {
-    const [formValues, handleInputChange, resetForm] = useForm({description: ''});
-    const [startTimeInputValue, setStartTimeInputValue] = useState({time: "00:00"});
-    const [endTimeInputValue, setEndTimeInputValue] = useState({time: "00:00"});
-    
+export const ScheduleAdd = ({ setSchedules, swiperState }) => {
+    const timeInputsInitialValue = { time: "" };
 
-    console.log(startTimeInputValue.time)
+    const [formValues, handleInputChange, resetForm] = useForm({ description: '' });
+    const [startTimeInput, setStartTimeInput] = useState(timeInputsInitialValue);
+    const [endTimeInput, setEndTimeInput] = useState(timeInputsInitialValue);
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -19,25 +18,32 @@ export const ScheduleAdd = ({setSchedules}) => {
 
         const newSchedule = {
             id: Date.now(),
+            day: swiperState,
             description: formValues.description,
-            startTime: startTimeInputValue.time,
-            endTime: endTimeInputValue.time
+            startTime: startTimeInput.time,
+            endTime: endTimeInput.time,
         };
 
-        resetForm();    
+        resetForm();
+        resetTimeInputs();
 
         setSchedules(schedules => [...schedules, newSchedule]);
     };
 
-    const handleStartTimeInputChange = ({target}) => setStartTimeInputValue({time: target.value});
-    const handleEndTimeInputChange = ({target}) => setEndTimeInputValue({time: target.value});
+    const resetTimeInputs = () => {
+        setStartTimeInput(timeInputsInitialValue);
+        setEndTimeInput(timeInputsInitialValue);
+    };
+
+    const startTimeInputChange = ({ target }) => setStartTimeInput({ time: target.value });
+    const endTimeInputChange = ({ target }) => setEndTimeInput({ time: target.value });
 
     return (
         <form className="schedule-form" onSubmit={handleSubmit}>
             <input
                 autoComplete="off"
                 className="form-control bg-light col-12"
-                maxLength={30}
+                maxLength={50}
                 name="description"
                 onChange={handleInputChange}
                 placeholder="Schedule name"
@@ -48,25 +54,25 @@ export const ScheduleAdd = ({setSchedules}) => {
             />
             <input
                 className="time-start form-control bg-light"
-                onChange={handleStartTimeInputChange}
+                onChange={startTimeInputChange}
                 required={true}
                 type="time"
-                value={startTimeInputValue.time}
+                value={startTimeInput.time}
             />
             <input
                 className="time-end form-control bg-light"
-                onChange={handleEndTimeInputChange}
+                onChange={endTimeInputChange}
                 required={true}
                 type="time"
-                value={endTimeInputValue.time}
+                value={endTimeInput.time}
             />
             <button
                 className="btn btn-primary"
                 disabled={formValues.description.length <= 0 ? true : false}
                 type="submit"
             >
-                Add 
+                Add schedule
             </button>
         </form>
-    )
+    );
 };

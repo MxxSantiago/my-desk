@@ -10,7 +10,7 @@ export const ScheduleItem = ({ schedule, setSchedules, index }) => {
             className="schedule list-group-item bg-light"
             key={index}
         >
-            <p>{schedule.description}</p>
+            <strong className="schedule-description">{schedule.description}</strong>
             <p className="schedule-time">{schedule.startTime} - {schedule.endTime}</p>
             <button
                 className="btn btn-danger"

@@ -2,14 +2,14 @@ import React from 'react'
 
 export const TodoItem = ({ todo, index, handleDelete, handleToggle }) => {
     return (
-        <div className="task">
+        <div className="todo">
             <div className="group-identificator" id={todo.color}/>
             <li
-                className="list-group-item bg-light"
+                className="todo-content list-group-item bg-light"
                 onClick={() => handleToggle(todo.id)}
             >
                 <p
-                    className={`${todo.done && 'taskCompleted'}`}
+                    className={`${todo.done && 'todoCompleted'}`}
                 >
                     {index + 1}. {todo.description}</p>
                 <button
