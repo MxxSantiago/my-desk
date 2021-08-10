@@ -1,21 +1,25 @@
+@import 'variables';
+
 .mySwiper {
     background-color: rgba($white, $alpha: 0.05);
     border-radius: 1rem;
+    color: $white;
     cursor: grab;
     height: auto;
     margin-top: 1rem;
     padding: 1rem;
+    transition: color .2s, font-size .25s;
 
     &:active {
         cursor: grabbing;
     };
 
     .swiper-slide {
-        width: 51%;
+        width: 50%;
     }; 
 };
 
 .swipeInactive {
-    opacity: 50%;
-    transition: opacity .2s;
+    color: rgba($white, $alpha: 0.5);
+    transition: color .2s, font-size .25s;
 };

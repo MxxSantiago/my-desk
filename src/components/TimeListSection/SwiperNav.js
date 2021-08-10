@@ -25,7 +25,7 @@ export const SwiperNav = ({ setSwiperState }) => {
                             key={index}
                         >
                             {({ isActive }) => (
-                                <div className={isActive ? "swipeActive fs-5" : "swipeInactive"}>{day}</div>
+                                <div className={isActive ? "swipeActive fs-5" : "swipeInactive fs-6"}>{day}</div>
                             )}
                         </SwiperSlide>
                     ))
