@@ -1,7 +1,5 @@
 # MY-DESK
 
-### My first react app.
-
 Multitasks pwa ussing react and scss
 
 - Tasks 
