@@ -1,20 +1,24 @@
-import React, { useState } from 'react'
-import { useForm } from '../../hooks/useForm';
+import React, { useState } from "react";
+import { useForm } from "../../hooks/useForm";
 
 export const ScheduleAdd = ({ setSchedules, swiperState }) => {
     const timeInputsInitialValue = { time: "" };
 
-    const [formValues, handleInputChange, resetForm] = useForm({ description: '' });
-    const [startTimeInput, setStartTimeInput] = useState(timeInputsInitialValue);
+    const [formValues, handleInputChange, resetForm] = useForm({
+        description: "",
+    });
+    const [startTimeInput, setStartTimeInput] = useState(
+        timeInputsInitialValue
+    );
     const [endTimeInput, setEndTimeInput] = useState(timeInputsInitialValue);
 
-    const handleSubmit = event => {
+    const handleSubmit = (event) => {
         event.preventDefault();
 
         if (formValues.description.trim().length <= 0) {
             alert("Enter at least one character");
             return;
-        };
+        }
 
         const newSchedule = {
             id: Date.now(),
@@ -27,7 +31,7 @@ export const ScheduleAdd = ({ setSchedules, swiperState }) => {
         resetForm();
         resetTimeInputs();
 
-        setSchedules(schedules => [...schedules, newSchedule]);
+        setSchedules((schedules) => [...schedules, newSchedule]);
     };
 
     const resetTimeInputs = () => {
@@ -35,8 +39,10 @@ export const ScheduleAdd = ({ setSchedules, swiperState }) => {
         setEndTimeInput(timeInputsInitialValue);
     };
 
-    const startTimeInputChange = ({ target }) => setStartTimeInput({ time: target.value });
-    const endTimeInputChange = ({ target }) => setEndTimeInput({ time: target.value });
+    const startTimeInputChange = ({ target }) =>
+        setStartTimeInput({ time: target.value });
+    const endTimeInputChange = ({ target }) =>
+        setEndTimeInput({ time: target.value });
 
     return (
         <form className="schedule-form" onSubmit={handleSubmit}>
