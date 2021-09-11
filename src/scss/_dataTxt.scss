@@ -1,15 +1,10 @@
 @import "variables";
 
-.board {
+.data-txt {
     background-color: $black !important;
     border: 0.1rem solid #444;
     color: $white !important;
-    height: calc(100vh - 170px);
     resize: none;
-    padding: 1rem;
+    width: min-content;
     @include scrollbar;
-
-    @include wideDevice {
-        height: calc(95vh - 200px);
-    }
 }

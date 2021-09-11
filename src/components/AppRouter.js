@@ -9,6 +9,7 @@ import { NavBar } from "./NavBar";
 import { HomeSection } from "../components/HomeSection/HomeSection";
 import { BoardSection } from "../components/BoardSection/BoardSection";
 import { TimeListSection } from "./TimeListSection/TimeListSection";
+import { DataSection } from "./DataSection/DataSection";
 
 export const AppRouter = () => {
     return (
@@ -18,6 +19,7 @@ export const AppRouter = () => {
                 <Switch>
                     <Route exact path="/" component={HomeSection} />
                     <Route exact path="/board" component={BoardSection} />
+                    <Route exact path="/data" component={DataSection} />
                     <Route exact path="/timelist" component={TimeListSection} />
                     <Redirect to="/" />
                 </Switch>

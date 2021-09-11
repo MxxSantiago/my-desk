@@ -1,29 +1,29 @@
-@import 'variables';
-@import 'forms';
-@import 'bootstrapList';
-@import 'todo';
-@import 'board';
-@import 'colorSelector';
-@import 'timeList';
-@import 'swiper';
-@import 'schedule';
+@import "variables";
+@import "forms";
+@import "bootstrapList";
+@import "todo";
+@import "board";
+@import "colorSelector";
+@import "timeList";
+@import "swiper";
+@import "schedule";
+@import "dataTxt";
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-};
+}
 
 body {
     user-select: none;
     @include scrollbar;
-};
+}
 
 .navbar {
     margin-bottom: 3.5vh;
-};
+}
 
 .main-container {
     max-width: 1000px;
-};
-
+}
