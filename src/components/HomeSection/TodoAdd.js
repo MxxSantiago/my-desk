@@ -1,25 +1,25 @@
-import React from 'react'
-import { useForm } from '../../hooks/useForm';
+import React from "react";
+import { useForm } from "../../hooks/useForm";
 
 export const TodoAdd = ({ handleAddTodo }) => {
     const [formValues, handleInputChange, resetForm, setFormValues] = useForm({
-        description: '',
-        color: 'color-blue'
+        description: "",
+        color: "color-blue",
     });
 
-    const handleSubmit = event => {
+    const handleSubmit = (event) => {
         event.preventDefault();
 
         if (formValues.description.trim().length <= 0) {
             alert("Enter at least one character");
             return;
-        };
+        }
 
         const newTodo = {
             id: Date.now(),
             description: formValues.description,
             color: formValues.color,
-            done: false
+            done: false,
         };
 
         resetForm();
@@ -29,7 +29,7 @@ export const TodoAdd = ({ handleAddTodo }) => {
     const changeColor = ({ target }) => {
         setFormValues({
             ...formValues,
-            color: target.id
+            color: target.id,
         });
     };
 
@@ -40,7 +40,7 @@ export const TodoAdd = ({ handleAddTodo }) => {
         "color-red",
         "color-green",
         "color-sky",
-        "color-orange"
+        "color-orange",
     ];
 
     return (
@@ -49,7 +49,6 @@ export const TodoAdd = ({ handleAddTodo }) => {
                 <input
                     autoComplete="off"
                     className="form-control bg-light"
-                    maxLength={35}
                     name="description"
                     onChange={handleInputChange}
                     placeholder="Task name"
@@ -68,16 +67,14 @@ export const TodoAdd = ({ handleAddTodo }) => {
                 </button>
             </form>
             <div className="colorSelector">
-                {
-                    colors.map(color => (
-                        <p 
-                            key={color}
-                            onClick={changeColor}
-                            className="color" 
-                            id={color}
-                        />
-                    ))
-                }
+                {colors.map((color) => (
+                    <p
+                        key={color}
+                        onClick={changeColor}
+                        className="color"
+                        id={color}
+                    />
+                ))}
             </div>
         </div>
     );
