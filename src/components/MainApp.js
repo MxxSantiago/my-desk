@@ -19,6 +19,8 @@ export const MainApp = () => {
                         ? { ...todo, done: !todo.done }
                         : todo
                 );
+            case "import":
+                return action.payload;
             default:
                 return state;
         }
