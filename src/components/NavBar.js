@@ -46,6 +46,14 @@ export const NavBar = () => {
                         >
                             Board
                         </NavLink>
+                        <NavLink
+                            exact
+                            activeClassName="active"
+                            className="nav-link"
+                            to="/data"
+                        >
+                            Data
+                        </NavLink>
                     </div>
                 </div>
             </div>
