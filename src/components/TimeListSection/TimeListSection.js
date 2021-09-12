@@ -19,7 +19,7 @@ export const TimeListSection = () => {
         "Sunday",
     ];
 
-    const todayIndex = [new Date().getDay() - 1];
+    const todayIndex = new Date().getDay();
     const [schedules, setSchedules] = useState(schedulesInitialState);
     const [swiperState, setSwiperState] = useState(days[todayIndex]);
 

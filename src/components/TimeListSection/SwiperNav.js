@@ -11,7 +11,7 @@ export const SwiperNav = ({ setSwiperState, days, todayIndex }) => {
     return (
         <div>
             <Swiper
-                initialSlide={`${todayIndex}`}
+                initialSlide={todayIndex === 0 ? 6 : todayIndex - 1}
                 className="mySwiper fw-bold"
                 slidesPerView={"auto"}
                 centeredSlides={true}
