@@ -21,7 +21,7 @@ export const TimeListSection = () => {
 
     const todayIndex = new Date().getDay();
     const [schedules, setSchedules] = useState(schedulesInitialState);
-    const [swiperState, setSwiperState] = useState(days[todayIndex]);
+    const [swiperState, setSwiperState] = useState(days[todayIndex - 1]);
 
     useEffect(() => {
         localStorage.setItem("schedules", JSON.stringify(schedules));
