@@ -1,17 +1,19 @@
-import React from "react";
-import { useForm } from "../../hooks/useForm";
+import React, { useRef } from 'react';
+import { useForm } from '../../hooks/useForm';
 
 export const TodoAdd = ({ handleAddTodo }) => {
     const [formValues, handleInputChange, resetForm, setFormValues] = useForm({
-        description: "",
-        color: "color-blue",
+        description: '',
+        color: 'color-blue',
     });
+
+    const newTaskInput = useRef(null);
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
         if (formValues.description.trim().length <= 0) {
-            alert("Enter at least one character");
+            alert('Enter at least one character');
             return;
         }
 
@@ -27,6 +29,8 @@ export const TodoAdd = ({ handleAddTodo }) => {
     };
 
     const changeColor = ({ target }) => {
+        newTaskInput.current.focus();
+
         setFormValues({
             ...formValues,
             color: target.id,
@@ -34,13 +38,13 @@ export const TodoAdd = ({ handleAddTodo }) => {
     };
 
     const colors = [
-        "color-blue",
-        "color-purple",
-        "color-yellow",
-        "color-red",
-        "color-green",
-        "color-sky",
-        "color-orange",
+        'color-blue',
+        'color-purple',
+        'color-yellow',
+        'color-red',
+        'color-green',
+        'color-sky',
+        'color-orange',
     ];
 
     return (
@@ -52,6 +56,7 @@ export const TodoAdd = ({ handleAddTodo }) => {
                     name="description"
                     onChange={handleInputChange}
                     placeholder="Task name"
+                    ref={newTaskInput}
                     required={true}
                     spellCheck={false}
                     type="text"
